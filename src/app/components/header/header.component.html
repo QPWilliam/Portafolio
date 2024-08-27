@@ -1,0 +1,20 @@
+<header class="bg-gray-900 text-white p-4 flex justify-between items-center">
+  <div class="text-2xl font-bold">
+    ウィリアム <!-- William en japonés -->
+  </div>
+  <nav class="space-x-4">
+    <a routerLink="/" class="hover:underline">Inicio</a>
+    <a routerLink="/about" class="hover:underline">Sobre mí</a>
+    <a routerLink="/projects" class="hover:underline">Proyectos</a>
+    <a routerLink="/skills" class="hover:underline">Habilidades</a>
+    <a routerLink="/contact" class="hover:underline">Contacto</a>
+  </nav>
+  <div class="flex items-center space-x-2">
+    <select class="bg-gray-800 text-white p-1 rounded">
+      <option value="jp">JP</option>
+      <option value="en">EN</option>
+      <option value="es">ES</option>
+    </select>
+    <button (click)="toggleTheme()" class="bg-gray-800 p-2 rounded">🌑</button>
+  </div>
+</header>
