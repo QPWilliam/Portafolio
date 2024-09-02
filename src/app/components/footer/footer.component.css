@@ -1,0 +1,6 @@
+footer.light {
+    background-color: rgb(250, 250, 250, 1); /* Ajusta la opacidad al 80% */
+}
+footer.dark {
+    background-color: rgba(4, 7, 20, 1); /* Ajusta la opacidad o tono más oscuro */
+}

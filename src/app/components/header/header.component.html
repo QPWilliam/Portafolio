@@ -1,20 +1,38 @@
-<header class="bg-gray-900 text-white p-4 flex justify-between items-center">
-  <div class="text-2xl font-bold">
-    ウィリアム <!-- William en japonés -->
-  </div>
-  <nav class="space-x-4">
-    <a routerLink="/" class="hover:underline">Inicio</a>
-    <a routerLink="/about" class="hover:underline">Sobre mí</a>
-    <a routerLink="/projects" class="hover:underline">Proyectos</a>
-    <a routerLink="/skills" class="hover:underline">Habilidades</a>
-    <a routerLink="/contact" class="hover:underline">Contacto</a>
+<header id="navbar" class="sticky top-0 z-10 bg-background text-foreground">
+  <nav class="container mx-auto flex items-center justify-between p-4">
+    <div class="text-2xl font-bold">{{ 'My Portfolio' | translate }}</div>
+    <div class="hidden md:flex items-center space-x-4">
+      <a (click)="scrollTo('home')" class="px-3 py-2 rounded-md cursor-pointer">{{ 'Home' | translate }}</a>
+      <a (click)="scrollTo('about')" class="px-3 py-2 rounded-md cursor-pointer">{{ 'About' | translate }}</a>
+      <a (click)="scrollTo('projects')" class="px-3 py-2 rounded-md cursor-pointer">{{ 'Projects' | translate }}</a>
+      <a (click)="scrollTo('skills')" class="px-3 py-2 rounded-md cursor-pointer">{{ 'Skills' | translate }}</a>
+      <a (click)="scrollTo('contact')" class="px-3 py-2 rounded-md cursor-pointer">{{ 'Contact' | translate }}</a>
+      <button (click)="toggleTheme()" class="p-2 rounded-md bg-primary text-primary-foreground">
+        {{ isDarkTheme ? '☀️' : '🌙' }}
+      </button>
+      <select [(ngModel)]="currentLanguage" (ngModelChange)="changeLanguage($event)" class="p-2 rounded-md bg-background border border-primary">
+        <option value="en">English</option>
+        <option value="es">Español</option>
+        <option value="ja">日本語</option>
+      </select>
+    </div>
+    <button (click)="toggleMobileMenu()" class="md:hidden p-2 rounded-md bg-primary text-primary-foreground">
+      ☰
+    </button>
   </nav>
-  <div class="flex items-center space-x-2">
-    <select class="bg-gray-800 text-white p-1 rounded">
-      <option value="jp">JP</option>
-      <option value="en">EN</option>
-      <option value="es">ES</option>
+  <div *ngIf="isMobileMenuOpen" class="md:hidden">
+    <a (click)="scrollTo('home')" class="block px-3 py-2 cursor-pointer">{{ 'Home' | translate }}</a>
+    <a (click)="scrollTo('about')" class="block px-3 py-2 cursor-pointer">{{ 'About' | translate }}</a>
+    <a (click)="scrollTo('projects')" class="block px-3 py-2 cursor-pointer">{{ 'Projects' | translate }}</a>
+    <a (click)="scrollTo('skills')" class="block px-3 py-2 cursor-pointer">{{ 'Skills' | translate }}</a>
+    <a (click)="scrollTo('contact')" class="block px-3 py-2 cursor-pointer">{{ 'Contact' | translate }}</a>
+    <button (click)="toggleTheme()" class="block w-full text-left px-3 py-2">
+      {{ isDarkTheme ? ('Change to light theme' | translate) : ('Change to dark theme' | translate) }}
+    </button>
+    <select [(ngModel)]="currentLanguage" (ngModelChange)="changeLanguage($event)" class="block w-full text-left px-3 py-2 bg-background">
+      <option value="en">English</option>
+      <option value="es">Español</option>
+      <option value="ja">日本語</option>
     </select>
-    <button (click)="toggleTheme()" class="bg-gray-800 p-2 rounded">🌑</button>
   </div>
 </header>

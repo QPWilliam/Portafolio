@@ -1,1 +1,45 @@
-<p>skills works!</p>
+<section id="skills" class="py-16">
+  <h2 class="text-3xl font-bold text-center mb-8">{{ 'My Skills' | translate }}</h2>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    
+    <!-- Habilidades Técnicas -->
+    <div class="space-y-4">
+      <h3 class="text-xl font-semibold">{{ 'Technical Skills' | translate }}</h3>
+      <div *ngFor="let skill of technicalSkills" class="flex flex-col space-y-2">
+        <span class="font-semibold">{{ skill.name }}</span>
+        <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+          <div [ngStyle]="{ 'width': skill.level + '%' }" 
+               class="bg-primary h-2.5 rounded-full">
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Bases de Datos -->
+    <div class="space-y-4">
+      <h3 class="text-xl font-semibold">{{ 'Database Skills' | translate }}</h3>
+      <div *ngFor="let skill of databaseSkills" class="flex flex-col space-y-2">
+        <span class="font-semibold">{{ skill.name }}</span>
+        <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+          <div [ngStyle]="{ 'width': skill.level + '%' }" 
+               class="bg-primary h-2.5 rounded-full">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Habilidades Blandas -->
+    <div class="space-y-4">
+      <h3 class="text-xl font-semibold">{{ 'Soft Skills' | translate }}</h3>
+      <div *ngFor="let skill of softSkills" class="flex flex-col space-y-2">
+        <span class="font-semibold">{{ skill.name }}</span>
+        <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+          <div [ngStyle]="{ 'width': skill.level + '%' }" 
+               class="bg-primary h-2.5 rounded-full">
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

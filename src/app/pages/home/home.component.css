@@ -1,0 +1,35 @@
+/* Estilos por defecto (tema claro) */
+#home.light {
+    background-color: hsla(195, 100%, 95%, 1);
+    background-image: radial-gradient(circle at 1% 2%, hsla(45, 100%, 85%, 1) 7%, transparent 84%),
+                      radial-gradient(circle at 95% 96%, hsla(60, 100%, 90%, 1) 7%, transparent 84%),
+                      radial-gradient(circle at 2% 98%, hsla(35, 100%, 80%, 1) 7%, transparent 84%);
+    background-blend-mode: normal, normal, normal;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Estilos para el tema oscuro */
+#home.dark {
+    background-color: hsla(165, 57%, 57%, 1);
+    background-image: radial-gradient(circle at 1% 2%, hsla(209, 100%, 8%, 1) 7%, transparent 84%),
+                      radial-gradient(circle at 95% 96%, hsla(204, 83%, 17%, 1) 7%, transparent 84%),
+                      radial-gradient(circle at 2% 98%, hsla(210, 63%, 25%, 1) 7%, transparent 84%);
+    background-blend-mode: normal, normal, normal;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Asegúrate de que el section ocupe todo el ancho */
+#home {
+    padding: 10%;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}

@@ -1,1 +1,14 @@
-<p>home works!</p>
+<section id="home" class="py-16 flex flex-col items-center justify-center space-y-4 text-center">
+  <h1 class="text-4xl font-bold">{{ 'Welcome to My Portfolio' | translate }}</h1>
+  <p class="text-xl text-center mt-2">{{"Backend Developer | API Specialist | Multilingual Tech Enthusiast" | translate}}</p>
+  <p class="max-w-2xl text-xl">
+    {{ 'I am a web developer passionate about creating incredible digital experiences.' | translate }}
+  </p>
+  <button (click)="scrollToProjects()" class="px-4 py-2 bg-primary text-primary-foreground rounded-md">
+    {{ 'View my projects' | translate }}
+  </button>
+  <p class="text-sm text-center italic mt-6">
+    {{"\"Building solid foundations for scalable digital solutions.\"" | translate}}
+</p>
+
+</section>
